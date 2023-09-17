@@ -2,6 +2,11 @@ plugins {
 	id 'org.springframework.boot' version '2.6.0'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id 'application'
+}
+
+application {
+	mainClass.set("ch.cern.todo.TodoApplication")
 }
 
 group = 'ch.cern'
@@ -15,10 +20,13 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.projectlombok:lombok:1.18.26'
+	implementation 'org.apache.httpcomponents:httpclient:4.5.14'
+	annotationProcessor 'org.projectlombok:lombok:1.18.26'
 	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-tasks.named('test') {
+test {
 	useJUnitPlatform()
 }

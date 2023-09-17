@@ -1,0 +1,7 @@
+{
+  "id": 1,
+  "name": "test updated",
+  "description": "This is a test updated",
+  "categoryId": 2,
+  "deadline": "2023-10-13T10:00"
+}
